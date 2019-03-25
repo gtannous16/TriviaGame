@@ -9,17 +9,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.jpeg" type="image/x-icon" />
 </head>
 
 <body background="assets/images/central-perk-wallpaper.png">
-
-    <h1>Trivia Game</h1>
-  
     <audio controls>
         <source src="assets/audio/illbethereforyou.mp3" type="audio">
         <source src="assets/audio/illbethereforyou.mp3" type="audio/mpeg">
-    </audio>
+   </audio> 
+   <header>
+        <h1>Trivia Game</h1>
+    </header>
+    
+    <div id="wrapper">
+        <img id=logo src="assets/images/wholegroup.gif">
 
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h2 class="timer">Time Left:</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="correct">Correct: 0</h3>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="incorrect">Incorrect: 0</h3>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="unanswered">Unanswered: 0</h3>
+                </div>
+            </div>
+            <div class="question"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 ans_options">
+                <p class="choice" id="0"></p>
+                <p class="choice" id="1"></p>
+                <p class="choice" id="2"></p>
+                <p class="choice" id="3"></p>
+            </div>
+            <button type="button" class="next_ques">Next</button> 
+        </div>
+        
+        <div class="col-md-10 result_area">
+            <h3>Questions Answered: <span class"answered"></span></h3>
+            <h3>Questions Unanswered: <span class"unanswered"></span></h3>
+            <h2>Final Score! <span class="finalScore"></span></h2>
+            <button type="button" class="restartGame_button">Play Again!</button>
+        </div>
+    
+    </div>
+    
+    <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
 </html>

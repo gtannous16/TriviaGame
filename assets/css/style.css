@@ -1,7 +1,41 @@
+header{
+    text-align: center;
+    color:cornsilk;
+    background-color: rgb(3, 45, 3);
+    font-family: 'Permanent Marker',cursive;
+    padding:1px 0px;
+    margin: 0px 170px;
+}
 body {
     background-repeat: no-repeat;
     background-size: 100%;
     background-color:rgb(3, 45, 3);
+    font-family: 'Permanent Marker',cursive;
 }
-h1 {font-family: 'Permanent Marker', cursive;
+h2{
+    position: relative;
+    text-align: center;
+    color: rgb(3, 45, 3);
+}
+h3{
+    position: relative;
+    text-align: center;
+    color:rgb(3, 45, 3);
+    margin
+}
+#wrapper{
+    border: solid 3px rgb(3, 45, 3);
+    background-color: cornsilk;
+    margin: 0px 170px;
+}
+#logo{
+    border:solid 3px rgb(3, 45, 3);
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 50%;
+}
+audio{
+    width:70px;
+    height:70px;
 }
