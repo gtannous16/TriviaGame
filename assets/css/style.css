@@ -4,7 +4,7 @@ header{
     background-color: rgb(3, 45, 3);
     font-family: 'Permanent Marker',cursive;
     padding:1px 0px;
-    margin: 0px 170px;
+    margin: 0px 290px;
 }
 body {
     background-repeat: no-repeat;
@@ -21,14 +21,32 @@ h3{
     position: relative;
     text-align: center;
     color:rgb(3, 45, 3);
-    margin
+    
+}
+#getstarted{
+  
+    text-align: center;
+    color:rgb(3, 45, 3);
+    font-family: 'Permanent Marker',cursive;
+    border:solid 3px rgb(3, 45, 3);
+    margin: 0px 300px;
+}
+.container {
+    width: 80%;
+    text-align: center;
+    padding-left:85px;
+    padding-right: 30px;
+
+}
+.next_ques{
+    text-align: center;
 }
 #wrapper{
     border: solid 3px rgb(3, 45, 3);
     background-color: cornsilk;
-    margin: 0px 170px;
+    margin: 0px 290px;
 }
-#logo{
+.logo{
     border:solid 3px rgb(3, 45, 3);
     display:block;
     margin-left: auto;
@@ -36,6 +54,6 @@ h3{
     width: 50%;
 }
 audio{
-    width:70px;
+    width:150px;
     height:70px;
 }

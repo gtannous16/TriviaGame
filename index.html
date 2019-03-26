@@ -5,51 +5,40 @@
     <title>F*r*i*e*n*d*s Trivia Game</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="icon" href="assets/images/favicon.jpeg" type="image/x-icon" />
+    <link rel="icon" href="assets/images/favicon.jpeg" type="image/x-icon"/>
 </head>
-
+<!--background-->
 <body background="assets/images/central-perk-wallpaper.png">
+    <!--theme song-->
     <audio controls>
         <source src="assets/audio/illbethereforyou.mp3" type="audio">
         <source src="assets/audio/illbethereforyou.mp3" type="audio/mpeg">
    </audio> 
+
    <header>
         <h1>Trivia Game</h1>
     </header>
-    
+    <!--image that changes as questions get answered-->
     <div id="wrapper">
-        <img id=logo src="assets/images/wholegroup.gif">
-
+        <img class=logo src="assets/images/wholegroup.gif">
+    <!--timer, & counters-->
     <div class="container">
         <div class="row">
             <div class="col-md-10">
+                    <button type="button" class="getstarted">Click Here to Play!</button>
                 <h2 class="timer">Time Left:</h2>
             </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <h3 class="correct">Correct: 0</h3>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="incorrect">Incorrect: 0</h3>
-                </div>
-                <div class="col-md-3">
-                    <h3 class="unanswered">Unanswered: 0</h3>
-                </div>
-            </div>
+            <!--question-->
             <div class="question"></div>
         </div>
         <div class="row">
-            <div class="col-md-8 ans_options">
-                <p class="choice" id="0"></p>
-                <p class="choice" id="1"></p>
-                <p class="choice" id="2"></p>
-                <p class="choice" id="3"></p>
+            <div class="col-md-10 ans_options">
+                <div class="answerList"></div>            
+                <button type="button" class="next_ques">Next Question</button>
             </div>
-            <button type="button" class="next_ques">Next</button> 
+ 
         </div>
         
         <div class="col-md-10 result_area">
@@ -60,7 +49,7 @@
         </div>
     
     </div>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
 </html>
