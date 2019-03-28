@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+    //array of questions
     var questions = [{
        question:"Which Friend hates thanksgiving?",
        answerList:["Ross","Chandler","Phoebe","Joey"],
@@ -101,4 +101,146 @@ $(document).ready(function () {
         answer:1,
         image:"assets/images/thanksgiving.gif"
     }]
+    //declaring variables
+    //question-right/wrong counter
+    var correctChoices= 0;
+    var wrongChoices= 0;
+    
+    //current question
+    var currentQuestion= 0;
+    
+    //score of player
+    var unanswered= 0;
+    var answered= 0;
+    var playerSelect= 0;
+    
+    //time
+    var sec=  0;
+    var time= 0;
+
+    //response after answer is chosen
+    var message = {
+        correct: "YAY!",
+        incorrect: "Could you BE anymore wrong??",
+        timesUp:"Times up...'WE WERE ON A BREAK!'-Ross",
+        finished:"Oh Man! I'm So excited, I may Vomit!-Chandler"
+    }
+    //variables for audio function
+    var correctaudio = document.getElementById("correctaud");
+    var incorrectaudio = document.getElementById("incorrectaud");
+    var timesupaudio = document.getElementById("timesupaud");
+    var finishedaudio =document.getElementById("finishedaud");
+
+    //its function time
+    function startGame() {
+        $('#message').empty();
+        $('#correctAnswer').empty();
+        $('#incorrectAnswer').empty();
+        $('#unanswered').empty();
+        currentQuestion = 0;
+        correctChoices = 0;
+        wrongChoices = 0;
+        unanswered =0;
+        newQuestion()
+    }
+
+    function countDown(){
+        sec=15;
+        $('#timer').html('<h2> Time Left: ' + sec + '</h2>');
+        answered = true;
+        time= setInterval (showCountDown,1500);
+    }
+
+    function showCountDown(){
+        sec--;
+        $('#timer').html('<h2>Time Left: ' + sec + '</h2>');
+        if (sec < 1){
+            clearInterval(time);
+            answered = false;
+            answerPage()
+        }
+    }
+
+    function newQuestion(){
+        $('#message').empty();
+        $('#correctAnswer').empty();
+        answered = true;
+
+        $('#question').html('Question #' + (currentQuestion + 1) + '/' + questions.length);
+        $('#question').html('<h2>' + questions[currentQuestion].question + '</h2>');
+        for (var i = 0; i < 4; i++){
+            var choices = $('<div>');
+            choices.text(questions[currentQuestion].answerList[i]);
+            choices.attr({'data-index': i });
+            choices.addClass('thisChoice');
+            $('#answerList').append(choices);
+        }
+        countDown();
+        $('.thisChoice').on('click', function(){
+            playerSelect= $(this).data('index');
+            clearInterval(time);
+            answerPage()
+        });
+    }
+    
+    function answerPage(){
+        $('#currentQuestion').empty();
+        $('.thisChoice').empty();
+        $('.question').empty();
+
+        //holds spot for answer
+        var rightAnswerText = questions[currentQuestion].answerList[questions[currentQuestion].answer];
+        //correct answer in array
+        var rightAnswerIndex = questions[currentQuestion].answer;
+
+        if ((playerSelect == rightAnswerIndex) && (answered == true)){
+            correctChoices++
+            $('#message').html(message.correct);
+            correctaudio.play();
+        } else if ((playerSelect != rightAnswerIndex) && (answered ==true)) {
+            wrongChoices++
+            $('#message').html(message.incorrect);
+            incorrectaudio.play();
+            $('#correctAnswer').html('The correct answer is:' + rightAnswerText);
+        
+        } else {
+            unanswered++
+            $('#message').html(message.timesUp);
+            timesupaudio.play();
+            $('#correctAnswer').html('The correct answer is:' + rightAnswerText);
+            answered = true;
+        }
+
+        if (currentQuestion == (questions.length - 1)) {
+            setTimeout(scoreBoard, 3000)
+        } else {
+            currentQuestion++;
+            setTimeout(newQuestion, 5000);
+        }
+
+    }
+    
+    function scoreBoard() {
+        $('#timer').empty();
+        $('#message').empty();
+        $('#correctAnswer').empty();
+        $('#finalMessage').html(message.finished);
+        finishedaudio.play();
+        $('#correctAnswer').html("Correct Answers:" + correctChoices);
+        $('#incorrectAnswer').html("Incorrect Answers:" + wrongChoices);
+        $('#unanswered').html("Unanswered:" + unanswered);
+        $('#restartGame_button').addClass('reset');
+        $('#restartGame_button').show();
+        $('#restartGame_button').html('Play Again!');
+    }
+
+    $('#getstarted').on('click', function(){
+        $(this).hide();
+        startGame();
+    });
+
+    $('#restartGame_button').on('click', function(){
+        $(this).hide();
+        startGame();
+    });
 });

@@ -27,26 +27,44 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10">
-                    <button type="button" class="getstarted">Click Here to Play!</button>
-                <h2 class="timer">Time Left:</h2>
+                    <button type="button" id="getstarted">Click Here to Play!</button>
+                <h2 id="timer">Time Left:</h2>
+                <div id="message"></div>
             </div>
             <!--question-->
-            <div class="question"></div>
+            <div id="currentquestion"></div>
+            <div id="question"><h2> </h2></div>
         </div>
         <div class="row">
             <div class="col-md-10 ans_options">
-                <div class="answerList"></div>            
+                <div id="answerList"></div>            
             </div>
  
         </div>
         
         <div class="col-md-10 result_area">
-            <h3>Questions Answered: <span class"answered"></span></h3>
-            <h3>Questions Unanswered: <span class"unanswered"></span></h3>
-            <h2>Final Score! <span class="finalScore"></span></h2>
-            <button type="button" class="restartGame_button">Play Again!</button>
+            <div id="finalMessage"></div>
+            <h3>Correct Answers: <span id="correctAnswer"></span></h3>
+            <h3>Incorrect Answers: <span id="incorrectAnswer"></span></h3>
+            <h3>Questions Unanswered: <span id="unanswered"></span></h3>
+            <button type="button" id="restartGame_button">Play Again!</button>
+            <div id="correctedAnswer"></div>
         </div>
-    
+        <div>
+                <audio id="correctaud">
+                    <source src="./assets/audio/yeah.mp3" type="audio/mp3">
+                </audio>
+                <audio id="incorrectaud">
+                    <source src="./assets/audio/how_dumb.mp3" type="audio/mp3">
+                </audio>
+                <audio id="timesupaud">
+                    <source src="./assets/audio/so_sad.mp3" type="audio/mp3">
+                </audio>
+                <audio id="finishedaud">
+                        <source src="./assets/audio/mayvomit.mp3" type="audio/mp3">
+                    </audio>
+            </div>
+        
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
