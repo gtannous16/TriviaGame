@@ -11,6 +11,8 @@ body {
     background-size: 100%;
     background-color:rgb(3, 45, 3);
     font-family: 'Permanent Marker',cursive;
+    font-size: 20px;
+    text-align: center;
 }
 h2{
     position: relative;
@@ -19,9 +21,33 @@ h2{
 }
 h3{
     position: relative;
-    text-align: center;
     color:rgb(3, 45, 3);
-    
+    margin-left: 20px;
+    text-align: center;
+}
+
+button{
+    text-align: center;
+    margin-left: 50px;
+}
+
+#timer{
+    margin-left: 40px;
+}
+#finalMessage{
+    text-align: center;
+    margin-left: 40px;
+    font-size: 30px;
+}
+#message{
+    text-align: center;
+    margin-left: 40px;
+    font-size: 30px;
+}
+#answerList{
+    text-align: center;
+    font-size: 20px;
+    margin-left: 40px;
 }
 #getstarted{
   
@@ -29,17 +55,20 @@ h3{
     color:rgb(3, 45, 3);
     font-family: 'Permanent Marker',cursive;
     border:solid 3px rgb(3, 45, 3);
-    margin: 0px 300px;
+    
 }
 .container {
     width: 80%;
     text-align: center;
-    padding-left:85px;
+    padding-left:50px;
     padding-right: 30px;
     margin-bottom: 15px;
 }
-.next_ques{
+
+#question{
+    padding:30px;
     text-align: center;
+    margin-right:30px;
 }
 #wrapper{
     border: solid 3px rgb(3, 45, 3);
@@ -51,7 +80,7 @@ h3{
     display:block;
     margin-left: auto;
     margin-right:auto;
-    width: 50%;
+    width: 60%;
 }
 audio{
     width:150px;

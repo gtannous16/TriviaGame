@@ -18,7 +18,7 @@
    </audio> 
 
    <header>
-        <h1>Trivia Game</h1>
+        <h1>Friends Trivia Game</h1>
     </header>
     <!--image that changes as questions get answered-->
     <div id="wrapper">
@@ -28,28 +28,30 @@
         <div class="row">
             <div class="col-md-10">
                     <button type="button" id="getstarted">Click Here to Play!</button>
-                <h2 id="timer">Time Left:</h2>
-                <div id="message"></div>
+                 <div id="message"></div>
+                 <h2 id="timer"></h2>
+                <br>
+                
             </div>
             <!--question-->
             <div id="currentquestion"></div>
-            <div id="question"><h2> </h2></div>
+            <br>
+            <div id="question"><h3> </h3></div>
         </div>
         <div class="row">
             <div class="col-md-10 ans_options">
                 <div id="answerList"></div>            
             </div>
- 
+       
         </div>
-        
+        <div type="button" id="restartGame_button"></div>
         <div class="col-md-10 result_area">
             <div id="finalMessage"></div>
-            <h3>Correct Answers: <span id="correctAnswer"></span></h3>
-            <h3>Incorrect Answers: <span id="incorrectAnswer"></span></h3>
-            <h3>Questions Unanswered: <span id="unanswered"></span></h3>
-            <button type="button" id="restartGame_button">Play Again!</button>
+            <h3><span id="correctAnswer"></span></h3>
+            <h3><span id="incorrectAnswer"></span></h3>
+            <h3><span id="unanswered"></span></h3>
             <div id="correctedAnswer"></div>
-        </div>
+        </div> 
         <div>
                 <audio id="correctaud">
                     <source src="./assets/audio/yeah.mp3" type="audio/mp3">
