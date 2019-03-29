@@ -140,7 +140,8 @@ $(document).ready(function () {
     var playerSelect= 0;
     
     //image
-    var image= $('#logo');
+    
+
     //time
     var sec=  0;
     var time= 0;
@@ -197,6 +198,7 @@ $(document).ready(function () {
         $('#question').html('<h3>' + questions[currentQuestion].question + '</h3>');
         for (var i = 0; i < 4; i++){
             var choices = $('<div>');
+            $('#timer').show();
             choices.text(questions[currentQuestion].answerList[i]);
             choices.attr({'data-index': i });
             choices.addClass('thisChoice');
@@ -222,23 +224,26 @@ $(document).ready(function () {
 
         if ((playerSelect == rightAnswerIndex) && (answered == true)){
             correctChoices++
+            $('#timer').hide();
             $('#message').html(message.correct);
             correctaudio.play();
-            
+            $('.logo').html('<img src="' + questions[currentQuestion].image + '"/>');
 
         } else if ((playerSelect != rightAnswerIndex) && (answered ==true)) {
             wrongChoices++
+            $('#timer').hide();
             $('#message').html(message.incorrect);
             incorrectaudio.play();
             $('#correctAnswer').html('The correct answer is: ' + rightAnswerText);
-            
+            $('.logo').html('<img src="' + questions[currentQuestion].image + '"/>');
         } else {
             unanswered++
+            $('#timer').hide();
             $('#message').html(message.timesUp);
             timesupaudio.play();
             $('#correctAnswer').html('The correct answer is: ' + rightAnswerText);
             answered = true;
-            
+            $('.logo').html('<img src="' + questions[currentQuestion].image + '"/>');
         }
 
         if (currentQuestion == (questions.length - 1)) {
