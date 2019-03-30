@@ -251,7 +251,7 @@ $(document).ready(function () {
             setTimeout(scoreBoard, 2000)
         } else {
             currentQuestion++;
-            setTimeout(newQuestion, 3000);
+            setTimeout(newQuestion, 4000);
         }
 
     }
