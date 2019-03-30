@@ -140,7 +140,7 @@ $(document).ready(function () {
     var playerSelect= 0;
     
     //image
-    
+    var image=$(".logo");
 
     //time
     var sec=  0;
@@ -227,7 +227,8 @@ $(document).ready(function () {
             $('#timer').hide();
             $('#message').html(message.correct);
             correctaudio.play();
-            $('.logo').html('<img src="' + questions[currentQuestion].image + '"/>');
+            $('.logo').attr('src', questions[currentQuestion].image);
+            console.log(questions[currentQuestion].image)
 
         } else if ((playerSelect != rightAnswerIndex) && (answered ==true)) {
             wrongChoices++
@@ -235,7 +236,7 @@ $(document).ready(function () {
             $('#message').html(message.incorrect);
             incorrectaudio.play();
             $('#correctAnswer').html('The correct answer is: ' + rightAnswerText);
-            $('.logo').html('<img src="' + questions[currentQuestion].image + '"/>');
+            $('.logo').attr('src', questions[currentQuestion].image);
         } else {
             unanswered++
             $('#timer').hide();
@@ -243,7 +244,7 @@ $(document).ready(function () {
             timesupaudio.play();
             $('#correctAnswer').html('The correct answer is: ' + rightAnswerText);
             answered = true;
-            $('.logo').html('<img src="' + questions[currentQuestion].image + '"/>');
+            $('.logo').attr('src', questions[currentQuestion].image);
         }
 
         if (currentQuestion == (questions.length - 1)) {
