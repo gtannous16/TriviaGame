@@ -148,10 +148,10 @@ $(document).ready(function () {
 
     //response after answer is chosen
     var message = {
-        correct: "Good Job!  'I think this could be the REAL THING, Capital R Capital T!'-Chandler",
+        correct: "Good Job!  'I think this could be the REAL THING, Capital R Capital T!' -Chandler",
         incorrect: "Could you BE anymore wrong??",
         timesUp:"Times up...'WE WERE ON A BREAK!'-Ross",
-        finished:"Oh Man! I'm So excited, I may Vomit!-Chandler"
+        finished:"Oh Man! I'm So excited, I may Vomit! -Chandler"
     }
     //variables for audio function
     var correctaudio = document.getElementById("correctaud");

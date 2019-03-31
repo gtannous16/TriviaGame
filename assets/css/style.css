@@ -44,8 +44,8 @@ button:hover{
 }
 #message{
     text-align: center;
-    margin-left: 40px;
-    font-size: 30px;
+    margin-left: 75px;
+    font-size: 28px;
     color:rgb(204,59,40);
 }
 #answerList{
@@ -93,6 +93,7 @@ button:hover{
 }
 #restartGame_button{
     margin-right: 45px;
+
 }
 #restartGame_button:hover{
     background-color:rgb(204,59,40);
