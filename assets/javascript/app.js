@@ -148,7 +148,7 @@ $(document).ready(function () {
 
     //response after answer is chosen
     var message = {
-        correct: "YAY!",
+        correct: "Good Job!  'I think this could be the REAL THING, Capital R Capital T!'-Chandler",
         incorrect: "Could you BE anymore wrong??",
         timesUp:"Times up...'WE WERE ON A BREAK!'-Ross",
         finished:"Oh Man! I'm So excited, I may Vomit!-Chandler"
@@ -251,7 +251,7 @@ $(document).ready(function () {
             setTimeout(scoreBoard, 2000)
         } else {
             currentQuestion++;
-            setTimeout(newQuestion, 4000);
+            setTimeout(newQuestion, 5000);
         }
 
     }

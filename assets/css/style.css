@@ -13,6 +13,7 @@ body {
     font-family: 'Permanent Marker',cursive;
     font-size: 20px;
     text-align: center;
+    color: rgb(3, 45, 3);
 }
 h2{
     position: relative;
@@ -26,9 +27,10 @@ h3{
     text-align: center;
 }
 
-button{
+button:hover{
     text-align: center;
     margin-left: 50px;
+    color: rgb(3, 45, 3);
 }
 
 #timer{
@@ -53,7 +55,11 @@ button{
     color:rgb(3, 45, 3);
 }
 #getstarted{
-  
+    margin-left:44px;
+}
+#getstarted:hover{
+    background-color:rgb(204,59,40);
+    padding:5px;
     text-align: center;
     color:rgb(3, 45, 3);
     font-family: 'Permanent Marker',cursive;
@@ -85,7 +91,15 @@ button{
     margin-right:auto;
     width: 60%;
 }
-
+#restartGame_button{
+    margin-right: 45px;
+}
+#restartGame_button:hover{
+    background-color:rgb(204,59,40);
+    padding:5px;
+    border:solid 3px rgb(3, 45, 3);
+    margin-right: 45px;
+}
 .thisChoice:hover{
     background-color:rgb(204,59,40);
     padding:5px;
